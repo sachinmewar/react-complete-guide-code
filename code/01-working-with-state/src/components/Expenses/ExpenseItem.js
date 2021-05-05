@@ -1,13 +1,10 @@
 /* 
 useState is a react hook.
 
-All these react hook can be recognized by 
-the fact that they start with the word use.
+All these react hook can be recognized by the fact that they start with the word use.
 
-All these react hook must be called directly
-inside the component function and they could
-not be called outside of these function, there
-is one exception.
+All these react hook must be called directly inside the component function and they could
+not be called outside of these function, there is one exception.
 */
 
 
