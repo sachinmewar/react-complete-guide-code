@@ -85,3 +85,18 @@ const ExpenseForm = () => {
 };
 
 export default ExpenseForm;
+
+/*
+We could add onClick listener but it is not a best way
+here because there is a default behaviour built into
+the browser. As if we click button with type submit present inside 
+the form is pressed this overall form element will emit an event which 
+we can listen. But when we click this button
+the page reloads because the browser automatically sends 
+a request whenever the form is submitted to the server.
+which is hosting the webpage. we can disable this 
+default behaviour by calling event.preventDefault() method.
+We get this event object automatically whenever we
+submit the form.
+
+*/
