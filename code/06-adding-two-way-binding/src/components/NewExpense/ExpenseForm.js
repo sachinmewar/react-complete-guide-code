@@ -2,41 +2,27 @@ import React, { useState } from 'react';
 
 import './ExpenseForm.css';
 
+/*
+We can now implement two way binding which means we don't just 
+listen to changes but we can pass new value back into the input
+So we can reset or change the input programatically.
+We can use this by adding value attribute to our input data.
+*/
 const ExpenseForm = () => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: '',
-  //   enteredAmount: '',
-  //   enteredDate: '',
-  // });
-
+  
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
-    // setUserInput((prevState) => {
-    //   return { ...prevState, enteredTitle: event.target.value };
-    // });
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredAmount: event.target.value,
-    // });
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredDate: event.target.value,
-    // });
   };
 
   const submitHandler = (event) => {
@@ -47,7 +33,8 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-
+  // Setting every value to initial state when the form is
+  //submitted.
     console.log(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
@@ -61,7 +48,7 @@ const ExpenseForm = () => {
           <label>Title</label>
           <input
             type='text'
-            value={enteredTitle}
+            value={enteredTitle}//Bind value to enteredTitle.
             onChange={titleChangeHandler}
           />
         </div>
